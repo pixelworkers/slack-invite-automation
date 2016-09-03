@@ -10,6 +10,14 @@ html
     #wrapper
       .main
         .header
-          h1
-            strong #{community}
-          h2(class="#{isFailed?'error':''}") !{message}
+          .pixel
+              img(src="images/pixel-white.svg")
+          .workers
+            img(src="images/workers-black.svg")
+        .content
+          object(type="image/svg+xml" data="images/pixel-bg.svg")
+          .content-position
+            .contents
+              h1
+              strong #{community}
+              h2(class="#{isFailed?'error':''}") !{message}

@@ -28,17 +28,18 @@ html
       .main
         .header
           .pixel
-              img(src="images/pixel-white.svg", class="center heading")
+              img(src="images/pixel-white.svg")
           .workers
-            img(src="images/workers-black.svg", class="center heading")
+            img(src="images/workers-black.svg")
         .content
-          form(method="POST", action="/invite")#join-form.form
-            input(type="email", name="email", placeholder="#{__('ENTER_EMAIL')}")#slack-email.field
-            if tokenRequired
-              input(type="text", name="token", placeholder="#{__('ENTER_TOKEN')}")#slack-token.field
-            input(type="submit", value="").submit
-        .background
           object(type="image/svg+xml" data="images/pixel-bg.svg")
+          .content-position
+            form(method="POST", action="/invite")#join-form.form
+              .contents
+                input(type="email", name="email", placeholder="#{__('ENTER_EMAIL')}")#slack-email.field
+                if tokenRequired
+                  input(type="text", name="token", placeholder="#{__('ENTER_TOKEN')}")#slack-token.field
+                button(type="submit", value="").submit
     script.
       var tokenRequired = #{tokenRequired};
       var form = document.getElementById('join-form');
